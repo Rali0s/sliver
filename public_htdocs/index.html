@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sliver — Marketplace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sliver: Marketplace" />
+  <meta name="theme-color" content="#0b1a14" />
+
+  <!-- Open Graph / Itch Preview -->
+  <meta property="og:title" content="Sliver — Marketplace" />
+  <meta property="og:description" content="Terminal First Marketplace" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="sliver.io" />
+
+  <style>
+    :root {
+      --bg: #070c0a;
+      --panel: #0b1a14;
+      --green: #7dffb3;
+      --green-dim: #3aa57a;
+      --text: #cfeee0;
+      --scan: rgba(125, 255, 179, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.02),
+          rgba(255,255,255,0.02) 1px,
+          transparent 1px,
+          transparent 3px
+        ),
+        radial-gradient(circle at top, #0f2a1f 0%, var(--bg) 60%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .terminal {
+      background: linear-gradient(180deg, #0c1f18, var(--panel));
+      border: 1px solid var(--green-dim);
+      box-shadow:
+        0 0 40px rgba(0,0,0,0.9),
+        inset 0 0 60px rgba(0,0,0,0.6);
+      padding: 2.5rem;
+      max-width: 760px;
+      width: 92%;
+      position: relative;
+    }
+
+    .terminal::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(to bottom, transparent, var(--scan), transparent);
+      animation: scan 6s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 0.15em;
+      color: var(--green);
+    }
+
+    .subtitle {
+      margin-top: 0.5rem;
+      color: var(--green-dim);
+      letter-spacing: 0.12em;
+    }
+
+    .divider {
+      margin: 1.5rem 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--green-dim), transparent);
+    }
+
+    .copy {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .cta {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: #04110b;
+      background: var(--green);
+      padding: 0.75rem 1.25rem;
+      border: none;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(125,255,179,0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 25px rgba(125,255,179,0.7);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--green-dim);
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      opacity: 0.5;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="terminal">
+    <h1>SLIVER</h1>
+    <div class="subtitle">The Terminal First Market.</div>
+    <img src="sliver.png" style="max-width: 100%; height: auto; display: block; margin: 1rem auto;" />
+
+    <div class="divider"></div>
+
+    <div class="copy">
+      <p>
+        The city adapts.<br />
+        Surveillance tightens.<br />
+        Death is not an end — it is a branch.
+      </p>
+
+      <p>
+        <strong>Sliver</strong> is a terminal-first experience blending
+        silence, at a price.
+      </p>
+
+      <p>
+        No heroes. No certainty.<br />
+        Only systems.
+      </p>
+    </div>
+
+    <div class="cta">
+      <a
+        class="btn"
+        href="/app/page.tsx"
+      >
+        Launch City
+      </a>
+
+      <a class="btn secondary" href="#" onclick="alert('STATUS: SIGNAL UNSTABLE')">
+        System Status
+      </a>
+    </div>
+
+    <footer>
+      SYS_SCAN: OK · SIGNAL: STABLE · ACCESS: GRANTED
+    </footer>
+  </main>
+</body>
+</html>
